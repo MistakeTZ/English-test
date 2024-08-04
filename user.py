@@ -30,8 +30,12 @@ def load_words():
     for word in unsorted:
         words.insert(randrange(0, len(words) + 1), word)
 
-    with open(join("support", "config.json")) as file:
-        config = json.load(file)
+    try:
+        with open(join("support", "config.json")) as file:
+            config = json.load(file)
+    except:
+        with open(join("support", "config.json"), "w") as file:
+            json.dump({}, file)
 
 
 class User:
