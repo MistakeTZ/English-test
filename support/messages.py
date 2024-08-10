@@ -36,7 +36,10 @@ async def message(msg: Message, key: str, reply_markup=None, *args):
 async def send_message(msg: Message | CallbackQuery, text: str = None, reply_markup = None, state: FSMContext = None, new_state: UserState = None, *args, **kwargs):
     if isinstance(msg, CallbackQuery):
         msg = msg.message
-        await msg.edit_reply_markup()
+        try:
+            await msg.edit_reply_markup()
+        except:
+            pass
         
     if state != None:
         await state.set_state(new_state)

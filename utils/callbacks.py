@@ -29,8 +29,10 @@ async def city_handler(clbck: CallbackQuery, state: FSMContext) -> None:
     id = clbck.from_user.id
     user = users[str(id)]
     if answer == "y":
+        await clbck.message.edit_text(clbck.message.text + get_text("guess_correct"))
         user.guess_word(True)
     elif answer == "n":
+        await clbck.message.edit_text(clbck.message.text + get_text("guess_uncorrect"))
         user.guess_word(False)
     else:
         user.change_lang()

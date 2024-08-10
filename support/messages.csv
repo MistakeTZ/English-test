@@ -11,3 +11,5 @@ word,Слово: {}\nПереведите его
 correct_is,Правильный ответ: {}
 change_lang,Сменить язык
 your_know_words,Ваши известные слова:\nРусские:{}\nАнглийские:{}
+guess_uncorrect,\nНеверно ❌
+guess_correct,\nВерно ✅
